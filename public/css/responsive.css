@@ -1,0 +1,2014 @@
+@media only screen and (min-width:1000px) and (max-width:1150px) {
+	#sidebar .side-menu li p {
+		left: 75px;
+	}
+
+	.influ-btn i {
+		margin-right: 5px;
+	}
+
+	.influ-table table tr td a {
+		display: inline-block;
+		margin: 5px;
+	}
+
+	.influ-btns {
+		flex-basis: 100%;
+	}
+
+	.influ-table table tr th {
+		font-size: 13px;
+		padding: 10px 5px;
+	}
+
+	.influ-table table tr td {
+		font-size: 12px;
+	}
+
+	.influ-btns form select {
+		padding: 4px 5px;
+		margin-left: 5px;
+		font-size: 12px;
+		margin-right: 5px;
+	}
+
+	.influ-btns form button i {
+		font-size: 13px;
+		color: #000;
+	}
+
+	.influ-logo {
+		width: 250px;
+		padding: 10px 30px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: flex-start;
+	}
+
+	.influ-strip-2 {
+	}
+
+	.influ-search {
+		margin-bottom: 0px;
+		flex-basis: 30%;
+	}
+
+	.influ-btns form {
+		text-align: inherit;
+		flex-direction: column;
+	}
+
+	.influ-btn {
+		width: auto;
+		font-size: 11px;
+		margin-left: 0px;
+		display: inline-flex;
+		margin-bottom: 0px;
+		padding: 6px 10px;
+		margin-bottom: 0px;
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	.menu-btn {
+		font-size: 25px;
+		margin-left: 20px;
+	}
+
+	.sidebar-nav {
+		height: 100%;
+		width: 90%;
+	}
+
+	#wrapper.toggled {
+		padding-left: 0;
+	}
+
+	#wrapper {
+		padding-left: 250px;
+	}
+
+	#wrapper.toggled #sidebar-wrapper {
+		width: 250px;
+		transform: translateX(-250px);
+	}
+
+	#sidebar-wrapper {
+		width: 250px;
+		height: 100%;
+		position: fixed;
+		transform: translateX(0px);
+	}
+
+	.influ-btns form {
+		width: 100%;
+		text-align: right;
+		flex-wrap: wrap;
+		display: inherit;
+	}
+
+	.influ-btns form {
+		display: inline-flex;
+		justify-content: flex-end;
+		flex-direction: row;
+	}
+
+	.influ-table p {
+		font-size: 13px;
+		color: #B07D3C;
+		text-align: right;
+		margin: 10px 10px;
+	}
+
+	.influ-btns form input[type="date"] {
+		width: 100%;
+		position: relative;
+		padding: 13px 0px;
+	}
+
+	.influ-btns form input[type="date"]::before {
+		top: 7px;
+	}
+
+	.influ-btns form label {
+		width: auto;
+		margin-right: 0;
+		margin-left: 5px;
+	}
+
+	.influ-btn input {
+		width: 68px;
+	}
+
+	.influ-btns form input[type="date"]::-webkit-calendar-picker-indicator {
+		width: 100px;
+		left: 15px;
+		position: absolute;
+	}
+
+	.modal-dialog {
+		width: 35% !important;
+		margin: 11.75rem auto;
+	}
+
+	.logout-in i {
+		font-size: 50px;
+	}
+
+	.logout-in p {
+		font-size: 14px;
+		margin: 22px 0;
+	}
+
+	.logout-in-btn {
+		padding: 5px 25px;
+		font-size: 13px;
+		margin: 0 5px;
+	}
+
+	#page-content-wrapper {
+		position: fixed;
+	}
+
+	.login-in {
+		width: 100%;
+		height: 100%;
+		display: flex;
+	}
+
+	.login-logo {
+		flex: 50%;
+		padding: 80px 0px;
+	}
+
+	.logo img {
+		width: 120px;
+		height: auto;
+		margin-bottom: 15px;
+	}
+
+	.logo h1 {
+		font-size: 28px;
+		margin: 0;
+		font-weight: 500;
+	}
+
+	.login-form {
+		flex: 50%;
+		width: 100%;
+		height: 100%;
+		padding: 0px 15px;
+	}
+
+	.login-form form {
+		width: 100%;
+		padding: 30px 10px;
+	}
+
+	.login-form form h1 {
+		font-size: 20px;
+		margin: 0px 0px 20px 0px;
+	}
+
+	.login-txt {
+		height: 35px;
+		margin-bottom: 10px;
+		font-size: 12px;
+		padding: 0px 15px;
+	}
+
+	.login-labl {
+		margin: 10px 0 15px 0;
+		font-size: 11px;
+	}
+
+	.login-rmb {
+		margin-right: 5px;
+		width: 10px;
+	}
+
+	.login-btn {
+		height: 35px;
+		font-size: 14px;
+		font-weight: 600;
+	}
+
+	.login-succ {
+		border-radius: 15px;
+		padding: 20px 0px;
+		width: 100%;
+		margin: auto;
+	}
+
+	.login-succ i {
+		font-size: 28px;
+		padding: 15px;
+		margin-bottom: 15px;
+	}
+
+	.login-succ h1 {
+		font-size: 20px;
+	}
+
+	.login-succ p {
+		font-size: 16px;
+		margin: 20px 0px;
+	}
+
+	.login-succ a {
+		padding: 6px 26px;
+		font-size: 14px;
+	}
+
+}
+
+@media only screen and (min-width:800px) and (max-width:999px) {
+	#sidebar .side-menu li p {
+		left: 75px;
+	}
+	.influ-btn i {
+		margin-right: 5px;
+	}
+
+	.influ-table-btn {
+		padding: 4px 20px;
+		font-size: 12px;
+	}
+
+	.influ-btns {
+		flex-basis: 100%;
+	}
+
+	.influ-table table tr th {
+		font-size: 13px;
+		padding: 10px 5px;
+	}
+
+	.influ-table table tr td {
+		font-size: 12px;
+	}
+
+	.influ-btns form select {
+		padding: 4px 10px;
+		margin-left: 5px;
+		font-size: 12px;
+	}
+
+	.influ-btns form button i {
+		font-size: 13px;
+		color: #000;
+	}
+
+	.influ-logo {
+		width: 250px;
+		padding: 10px 30px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: flex-start;
+	}
+
+	.influ-strip-2 {
+	}
+
+	.influ-search {
+		margin-bottom: 0px;
+		flex-basis: 30%;
+	}
+
+	.influ-btns form {
+		text-align: inherit;
+		flex-direction: column;
+	}
+
+	.influ-btn {
+		width: auto;
+		font-size: 11px;
+		margin-left: 0px;
+		display: inline-flex;
+		margin-bottom: 0px;
+		padding: 6px 10px;
+		margin-bottom: 0px;
+		margin-left: 5px;
+	}
+
+	.menu-btn {
+		font-size: 25px;
+		margin-left: 20px;
+	}
+
+	.sidebar-nav {
+		height: 100%;
+		width: 90%;
+	}
+
+	#wrapper.toggled {
+		padding-left: 0;
+	}
+
+	#wrapper {
+		padding-left: 250px;
+	}
+
+	#wrapper.toggled #sidebar-wrapper {
+		width: 250px;
+		transform: translateX(-250px);
+	}
+
+	#sidebar-wrapper {
+		width: 250px;
+		height: 100%;
+		transform: translateX(0px);
+		position: fixed;
+	}
+
+	.influ-btns form {
+		width: 100%;
+		text-align: right;
+		flex-wrap: wrap;
+		display: inherit;
+	}
+
+	.influ-btns form {
+		display: inline-flex;
+		justify-content: flex-end;
+		flex-direction: row;
+		align-items: stretch;
+	}
+
+	.influ-table p {
+		font-size: 13px;
+		color: #B07D3C;
+		text-align: right;
+		margin: 10px 10px;
+	}
+
+	.influ-btns form input[type="date"] {
+		width: 100%;
+		position: relative;
+		padding: 13px 0px;
+	}
+
+	.influ-btns form input[type="date"]::before {
+		top: 6px;
+	}
+
+	.influ-btns form label {
+		width: auto;
+		margin-right: 0px;
+		padding: 4px 10px;
+		margin-left: 5px;
+	}
+
+	.influ-btns form input[type="date"]::-webkit-calendar-picker-indicator {
+		width: 100px;
+		left: 15px;
+		position: absolute;
+	}
+
+	.modal-dialog {
+		width: 35% !important;
+		margin: 12.75rem auto;
+	}
+
+	.logout-in i {
+		font-size: 50px;
+	}
+
+	.logout-in p {
+		font-size: 14px;
+		margin: 22px 0;
+	}
+
+	.logout-in-btn {
+		padding: 5px 25px;
+		font-size: 13px;
+		margin: 0 5px;
+	}
+
+	#page-content-wrapper {
+		position: fixed;
+	}
+
+	.login-in {
+		width: 100%;
+		height: 100%;
+		display: flex;
+	}
+
+	.login-logo {
+		flex: 50%;
+		padding: 50px 0px;
+	}
+
+	.logo img {
+		width: 100px;
+		height: auto;
+		margin-bottom: 10px;
+	}
+
+	.logo h1 {
+		font-size: 24px;
+		margin: 0;
+		font-weight: 500;
+	}
+
+	.login-form {
+		flex: 50%;
+		width: 100%;
+		height: 100%;
+		padding: 20px 15px;
+	}
+
+	.login-form form {
+		width: 100%;
+		padding: 20px 10px;
+	}
+
+	.login-form form h1 {
+		font-size: 17px;
+		margin: 0px 0px 15px 0px;
+	}
+
+	.login-txt {
+		height: 30px;
+		margin-bottom: 10px;
+		font-size: 12px;
+		padding: 0px 15px;
+	}
+
+	.login-labl {
+		margin: 10px 0 15px 0;
+		font-size: 11px;
+	}
+
+	.login-rmb {
+		margin-right: 5px;
+		width: 10px;
+	}
+
+	.login-btn {
+		height: 30px;
+		font-size: 14px;
+		font-weight: 600;
+	}
+
+	.login-succ {
+		border-radius: 15px;
+		padding: 20px 0px;
+		width: 100%;
+		margin: auto;
+	}
+
+	.login-succ i {
+		font-size: 28px;
+		padding: 15px;
+		margin-bottom: 15px;
+	}
+
+	.login-succ h1 {
+		font-size: 20px;
+	}
+
+	.login-succ p {
+		font-size: 16px;
+		margin: 20px 0px;
+	}
+
+	.login-succ a {
+		padding: 6px 26px;
+		font-size: 14px;
+	}
+
+	#sidebar.hide {
+		width: 50px;
+	}
+
+	#sidebar .brand img {
+		width: 30px;
+	}
+
+	#content main {
+		padding: 12px;
+	}
+
+	#sidebar.hide ~ #content {
+		width: calc(100% - 50px);
+		left: 50px;
+	}
+
+	.influ-btn input {
+		text-align: left;
+		width: 60px;
+		min-width: 60px;
+	}
+
+	.influ-btn input::placeholder {
+		font-size: 12px;
+	}
+
+	#sidebar {
+		width: 220px;
+	}
+
+	#content {
+		width: calc(100% - 60px);
+		left: 220px;
+	}
+
+	#sidebar .side-menu li {
+		height: 35px;
+		margin-left: 8px;
+		margin-bottom: 10px;
+	}
+
+	#sidebar .side-menu li a {
+		font-size: 12px;
+		padding-left: 16px;
+	}
+
+	#sidebar .side-menu li a i {
+		margin-right: 13px;
+		font-size: 15px;
+	}
+
+	.influ-btns form button i {
+		font-size: 14px;
+	}
+
+	.influ-table table tr td a {
+		display: inline-block;
+		margin: 5px 4px 5px 4px;
+	}
+
+	.influ-pagi ul li {
+		margin: 0 7px;
+	}
+
+	.influ-pagi ul li a {
+		font-size: 13px;
+	}
+
+	.influ-pagi ul li.active a {
+		font-size: 14px;
+		font-weight: 700;
+	}
+
+	#sidebar .brand {
+		font-size: 20px;
+		padding-left: 12px;
+	}
+
+	.influ-table table tr th {
+		font-size: 12px;
+		padding: 5px;
+	}
+
+	.influ-table table tr td {
+		font-size: 11px;
+		padding: 5px;
+	}
+
+	.modal-dialog-2 {
+		max-width: 300px;
+		margin: 8.35rem auto;
+	}
+
+	.edit-in_txt {
+		height: 30px;
+		margin-bottom: 8px;
+		font-size: 12px;
+	}
+
+	.edit-in_txtarea {
+		height: 80px;
+		margin-bottom: 8px;
+		font-size: 12px;
+	}
+
+}
+
+@media only screen and (min-width:768px) and (max-width:799px) {
+	#sidebar .side-menu li p {
+		left: 75px;
+	}
+	.influ-btn i {
+		margin-right: 5px;
+	}
+
+	.influ-table-btn {
+		padding: 4px 20px;
+		font-size: 12px;
+	}
+
+	.influ-btns {
+		flex-basis: 100%;
+	}
+
+	.influ-table table tr th {
+		font-size: 13px;
+		padding: 10px 5px;
+	}
+
+	.influ-table table tr td {
+		font-size: 12px;
+	}
+
+	.influ-btns form select {
+		padding: 4px 10px;
+		margin-left: 5px;
+		font-size: 12px;
+	}
+
+	.influ-btns form button i {
+		font-size: 13px;
+		color: #000;
+	}
+
+	.influ-logo {
+		width: 250px;
+		padding: 10px 30px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: flex-start;
+	}
+
+	.influ-strip-2 {
+	}
+
+	.influ-search {
+		margin-bottom: 0px;
+		flex-basis: 30%;
+	}
+
+	.influ-btns form {
+		text-align: inherit;
+		flex-direction: column;
+	}
+
+	.influ-btn {
+		width: auto;
+		font-size: 11px;
+		margin-left: 0px;
+		display: inline-flex;
+		margin-bottom: 0px;
+		padding: 6px 10px;
+		margin-bottom: 0px;
+		margin-left: 5px;
+	}
+
+	.menu-btn {
+		font-size: 25px;
+		margin-left: 20px;
+	}
+
+	.sidebar-nav {
+		height: 100%;
+		width: 90%;
+	}
+
+	#wrapper.toggled {
+		padding-left: 0;
+	}
+
+	#wrapper {
+		padding-left: 250px;
+	}
+
+	#wrapper.toggled #sidebar-wrapper {
+		width: 250px;
+		transform: translateX(-250px);
+	}
+
+	#sidebar-wrapper {
+		width: 250px;
+		height: 100%;
+		transform: translateX(0px);
+		position: fixed;
+	}
+
+	.influ-btns form {
+		width: 100%;
+		text-align: right;
+		flex-wrap: wrap;
+		display: inherit;
+	}
+
+	.influ-btns form {
+		display: inline-flex;
+		justify-content: flex-end;
+		flex-direction: row;
+		align-items: stretch;
+	}
+
+	.influ-table p {
+		font-size: 13px;
+		color: #B07D3C;
+		text-align: right;
+		margin: 10px 10px;
+	}
+
+	.influ-btns form input[type="date"] {
+		width: 100%;
+		position: relative;
+		padding: 13px 0px;
+	}
+
+	.influ-btns form input[type="date"]::before {
+		top: 6px;
+	}
+
+	.influ-btns form label {
+		width: auto;
+		margin-right: 0px;
+		padding: 4px 10px;
+		margin-left: 5px;
+	}
+
+	.influ-btns form input[type="date"]::-webkit-calendar-picker-indicator {
+		width: 100px;
+		left: 15px;
+		position: absolute;
+	}
+
+	.modal-dialog {
+		width: 35% !important;
+		margin: 12.75rem auto;
+	}
+
+	.logout-in i {
+		font-size: 50px;
+	}
+
+	.logout-in p {
+		font-size: 14px;
+		margin: 22px 0;
+	}
+
+	.logout-in-btn {
+		padding: 5px 25px;
+		font-size: 13px;
+		margin: 0 5px;
+	}
+
+	#page-content-wrapper {
+		position: fixed;
+	}
+
+	.login-in {
+		width: 100%;
+		height: 100%;
+		display: flex;
+	}
+
+	.login-logo {
+		flex: 50%;
+		padding: 50px 0px;
+	}
+
+	.logo img {
+		width: 100px;
+		height: auto;
+		margin-bottom: 10px;
+	}
+
+	.logo h1 {
+		font-size: 24px;
+		margin: 0;
+		font-weight: 500;
+	}
+
+	.login-form {
+		flex: 50%;
+		width: 100%;
+		height: 100%;
+		padding: 20px 15px;
+	}
+
+	.login-form form {
+		width: 100%;
+		padding: 20px 10px;
+	}
+
+	.login-form form h1 {
+		font-size: 17px;
+		margin: 0px 0px 15px 0px;
+	}
+
+	.login-txt {
+		height: 30px;
+		margin-bottom: 10px;
+		font-size: 12px;
+		padding: 0px 15px;
+	}
+
+	.login-labl {
+		margin: 10px 0 15px 0;
+		font-size: 11px;
+	}
+
+	.login-rmb {
+		margin-right: 5px;
+		width: 10px;
+	}
+
+	.login-btn {
+		height: 30px;
+		font-size: 14px;
+		font-weight: 600;
+	}
+
+	.login-succ {
+		border-radius: 15px;
+		padding: 20px 0px;
+		width: 100%;
+		margin: auto;
+	}
+
+	.login-succ i {
+		font-size: 28px;
+		padding: 15px;
+		margin-bottom: 15px;
+	}
+
+	.login-succ h1 {
+		font-size: 20px;
+	}
+
+	.login-succ p {
+		font-size: 16px;
+		margin: 20px 0px;
+	}
+
+	.login-succ a {
+		padding: 6px 26px;
+		font-size: 14px;
+	}
+
+	#sidebar.hide {
+		width: 50px;
+	}
+
+	#sidebar .brand img {
+		width: 30px;
+	}
+
+	#content main {
+		padding: 12px;
+	}
+
+	#sidebar.hide ~ #content {
+		width: calc(100% - 50px);
+		left: 50px;
+	}
+
+	.influ-btn input {
+		text-align: left;
+		width: 60px;
+		min-width: 60px;
+	}
+
+	.influ-btn input::placeholder {
+		font-size: 12px;
+	}
+
+	#sidebar {
+		width: 220px;
+	}
+
+	#content {
+		width: calc(100% - 60px);
+		left: 220px;
+	}
+
+	#sidebar .side-menu li {
+		height: 35px;
+		margin-left: 8px;
+		margin-bottom: 10px;
+	}
+
+	#sidebar .side-menu li a {
+		font-size: 12px;
+		padding-left: 16px;
+	}
+
+	#sidebar .side-menu li a i {
+		margin-right: 13px;
+		font-size: 15px;
+	}
+
+	.influ-btns form button i {
+		font-size: 14px;
+	}
+
+	.influ-table table tr td a {
+		display: inline-block;
+		margin: 5px 12px 5px 12px;
+	}
+
+	.influ-pagi ul li {
+		margin: 0 7px;
+	}
+
+	.influ-pagi ul li a {
+		font-size: 13px;
+	}
+
+	.influ-pagi ul li.active a {
+		font-size: 14px;
+		font-weight: 700;
+	}
+
+	#sidebar .brand {
+		font-size: 20px;
+		padding-left: 12px;
+	}
+
+	.influ-table table tr th {
+		font-size: 12px;
+		padding: 5px;
+	}
+
+	.influ-table table tr td {
+		font-size: 11px;
+		padding: 5px;
+	}
+
+	.modal-dialog-2 {
+		max-width: 280px;
+		margin: 7.75rem auto;
+	}
+
+	.edit-in_txt {
+		height: 30px;
+		margin-bottom: 8px;
+		font-size: 12px;
+	}
+
+	.edit-in_txtarea {
+		height: 80px;
+		margin-bottom: 8px;
+		font-size: 12px;
+	}
+
+}
+
+@media only screen and (min-width:480px) and (max-width:767px) {
+	#sidebar .side-menu li p {
+		left: 75px;
+	}
+	.influ-btn i {
+		margin-right: 5px;
+	}
+
+	.influ-table-btn {
+		padding: 4px 20px;
+		font-size: 12px;
+	}
+
+	.influ-table table tr th {
+		font-size: 13px;
+		padding: 10px 5px;
+	}
+
+	.influ-table table tr td {
+		font-size: 12px;
+	}
+
+	.influ-btns form select {
+		padding: 7px 12px;
+		margin-left: 0px;
+		font-size: 12px;
+		margin: 4px 5px 3px 0px;
+	}
+
+	.influ-btns form button i {
+	}
+
+	.influ-logo {
+		width: 250px;
+		padding: 10px 30px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: flex-start;
+	}
+
+	.influ-strip-2 {
+		align-items: stretch;
+		margin-bottom: 20px;
+		flex-direction: column;
+	}
+
+	.influ-search {
+		margin-bottom: 15px;
+	}
+
+	.influ-btns form {
+		text-align: inherit;
+		flex-direction: column;
+	}
+
+	.influ-btn {
+		padding: 7px 10px;
+		margin-bottom: 5px;
+		margin-left: 0;
+		margin-right: 5px;
+	}
+
+	.menu-btn {
+		font-size: 25px;
+		margin-left: 20px;
+	}
+
+	.sidebar-nav {
+		height: 100%;
+		width: 90%;
+	}
+
+	#wrapper.toggled {
+		padding-left: 0;
+	}
+
+	#wrapper {
+		padding-left: 250px;
+	}
+
+	#wrapper.toggled #sidebar-wrapper {
+		width: 250px;
+		transform: translateX(-250px);
+	}
+
+	#sidebar-wrapper {
+		width: 250px;
+		height: 100%;
+		position: fixed;
+		transform: translateX(0px);
+	}
+
+	.influ-btns form {
+		width: 100%;
+		text-align: right;
+		flex-wrap: wrap;
+		display: inherit;
+	}
+
+	.influ-btns form {
+		display: inline-flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: baseline;
+	}
+
+	.influ-table p {
+		font-size: 13px;
+		color: #B07D3C;
+		text-align: center;
+		margin: 10px 0px;
+	}
+
+	.influ-btns form input[type="date"] {
+		width: 100%;
+		position: relative;
+		padding: 13px 0px;
+	}
+
+	.influ-btns form input[type="date"]::before {
+		top: 5px;
+	}
+
+	.influ-btns form label {
+		width: auto;
+		margin-right: 5px;
+		margin-left: 0;
+		padding: 7px 15px;
+	}
+
+	.influ-btns form input[type="date"]::-webkit-calendar-picker-indicator {
+		width: 100px;
+		left: 15px;
+		position: absolute;
+	}
+
+	.modal-dialog {
+		width: 65% !important;
+		margin: 11.75rem auto;
+	}
+
+	.logout-in i {
+		font-size: 50px;
+	}
+
+	.logout-in p {
+		font-size: 14px;
+		margin: 22px 0;
+	}
+
+	.logout-in-btn {
+		padding: 5px 25px;
+		font-size: 13px;
+		margin: 0 5px;
+	}
+
+	#page-content-wrapper {
+		position: fixed;
+	}
+
+	.login-in {
+		width: 100%;
+		height: 100%;
+		display: flex;
+	}
+
+	.login-logo {
+		flex: auto;
+		padding: 45px 0px;
+	}
+
+	.logo img {
+		width: 100px;
+		height: auto;
+		margin-bottom: 10px;
+	}
+
+	.logo h1 {
+		font-size: 24px;
+		margin: 0;
+		font-weight: 500;
+	}
+
+	.login-form {
+		flex: 50%;
+		width: 100%;
+		height: 100%;
+		padding: 20px 15px;
+	}
+
+	.login-form form {
+		width: 100%;
+		padding: 20px 10px;
+	}
+
+	.login-form form h1 {
+		font-size: 17px;
+		margin: 0px 0px 15px 0px;
+	}
+
+	.login-txt {
+		height: 30px;
+		margin-bottom: 10px;
+		font-size: 12px;
+		padding: 0px 15px;
+	}
+
+	.login-labl {
+		margin: 10px 0 15px 0;
+		font-size: 11px;
+	}
+
+	.login-rmb {
+		margin-right: 5px;
+		width: 10px;
+	}
+
+	.login-btn {
+		height: 30px;
+		font-size: 14px;
+		font-weight: 600;
+	}
+
+	.login-succ {
+		border-radius: 15px;
+		padding: 20px 10px;
+		width: 65%;
+		margin: auto;
+	}
+
+	.login-succ i {
+		font-size: 28px;
+		padding: 15px;
+		margin-bottom: 15px;
+	}
+
+	.login-succ h1 {
+		font-size: 20px;
+	}
+
+	.login-succ p {
+		font-size: 16px;
+		margin: 20px 0px;
+	}
+
+	.login-succ a {
+		padding: 6px 26px;
+		font-size: 14px;
+	}
+
+	#sidebar.hide {
+		width: 50px;
+	}
+
+	#sidebar .brand img {
+		width: 30px;
+	}
+
+	#content main {
+		padding: 12px;
+	}
+
+	#sidebar.hide ~ #content {
+		width: calc(100% - 50px);
+		left: 50px;
+	}
+
+	.influ-btn input {
+		text-align: left;
+	}
+
+	.influ-btn input::placeholder {
+		font-size: 12px;
+	}
+
+	#sidebar {
+		width: 220px;
+	}
+
+	#content {
+		width: calc(100% - 60px);
+		left: 220px;
+	}
+
+	#sidebar .side-menu li {
+		height: 35px;
+		margin-left: 8px;
+		margin-bottom: 10px;
+	}
+
+	#sidebar .side-menu li a {
+		font-size: 12px;
+		padding-left: 16px;
+	}
+
+	#sidebar .side-menu li a i {
+		margin-right: 13px;
+		font-size: 15px;
+	}
+
+	.influ-btns form button i {
+		font-size: 14px;
+	}
+
+	.influ-table table tr td a {
+		display: inline-block;
+		margin: 5px 5px 5px 5px;
+	}
+
+	.influ-pagi ul li {
+		margin: 0 7px;
+	}
+
+	.influ-pagi ul li a {
+		font-size: 13px;
+	}
+
+	.influ-pagi ul li.active a {
+		font-size: 14px;
+		font-weight: 700;
+	}
+
+	#sidebar .brand {
+		font-size: 20px;
+		padding-left: 12px;
+	}
+
+	.influ-table table tr th {
+		font-size: 12px;
+		padding: 5px;
+	}
+
+	.influ-table table tr td {
+		font-size: 11px;
+		padding: 5px;
+	}
+
+	.modal-dialog-2 {
+		max-width: 280px;
+		margin: 7.75rem auto;
+	}
+
+	.edit-in_txt {
+		height: 30px;
+		margin-bottom: 8px;
+		font-size: 12px;
+	}
+
+	.edit-in_txtarea {
+		height: 80px;
+		margin-bottom: 8px;
+		font-size: 12px;
+	}
+
+}
+
+@media only screen and (min-width:360px) and (max-width:479px) {
+	#sidebar .side-menu li p {
+		left: 75px;
+	}
+	.influ-btn i {
+		margin-right: 5px;
+	}
+
+	.influ-table-btn {
+		padding: 4px 20px;
+		font-size: 12px;
+	}
+
+	.influ-btns form button i {
+	}
+
+	.influ-logo {
+		width: 250px;
+	}
+
+	.influ-strip-2 {
+		align-items: stretch;
+		margin-bottom: 20px;
+		flex-direction: column;
+	}
+
+	.influ-search {
+		margin-bottom: 15px;
+	}
+
+	.influ-btns form {
+		text-align: inherit;
+		flex-direction: column;
+	}
+
+	.influ-btn {
+		width: 100%;
+		font-size: 12px;
+		margin-left: 0px;
+		display: inline-flex;
+		flex-wrap: nowrap;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: center;
+		margin-bottom: 5px;
+	}
+
+	.menu-btn {
+		font-size: 25px;
+		margin: auto;
+	}
+
+	.sidebar-nav {
+		height: 100%;
+		width: 90%;
+	}
+
+	#wrapper.toggled {
+		padding-left: 0;
+	}
+
+	#wrapper {
+		padding-left: 360px;
+	}
+
+	#wrapper.toggled #sidebar-wrapper {
+		width: 360px;
+		transform: translateX(-360px);
+	}
+
+	#sidebar-wrapper {
+		width: 360px;
+		height: 100%;
+		position: fixed;
+		transform: translateX(0px);
+	}
+
+	.influ-btns form {
+		width: 100%;
+		text-align: right;
+		flex-wrap: wrap;
+		display: inherit;
+	}
+
+	.influ-btns form {
+		display: initial;
+	}
+
+	.influ-table p {
+		font-size: 13px;
+		color: #B07D3C;
+		text-align: center;
+		margin: 10px 0px;
+	}
+
+	.influ-btns form input[type="date"] {
+		width: 100%;
+		position: relative;
+		padding: 13px 0px;
+	}
+
+	.influ-btns form input[type="date"]::before {
+		top: 5px;
+	}
+
+	.influ-btns form label {
+		width: 49%;
+		margin: 0px 0px 6px 0px;
+	}
+
+	.influ-btns form input[type="date"]::-webkit-calendar-picker-indicator {
+		width: 100px;
+		left: 15px;
+		position: absolute;
+	}
+
+	.modal-dialog {
+		width: 85% !important;
+		margin: 11.75rem auto;
+	}
+
+	.logout-in i {
+		font-size: 50px;
+	}
+
+	.logout-in p {
+		font-size: 14px;
+		margin: 22px 0;
+	}
+
+	.logout-in-btn {
+		padding: 5px 25px;
+		font-size: 13px;
+		margin: 0 5px;
+	}
+
+	#page-content-wrapper {
+		position: fixed;
+	}
+
+	.influ-btns form select {
+		width: 100%;
+		margin-left: 0px;
+		margin-bottom: 6px;
+		padding: 5px;
+	}
+
+	.login-in {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.login-logo {
+		flex: auto;
+		padding: 25px 0px;
+	}
+
+	.logo img {
+		width: 100px;
+		height: auto;
+		margin-bottom: 10px;
+	}
+
+	.logo h1 {
+		font-size: 25px;
+		margin: 0;
+		font-weight: 500;
+	}
+
+	.login-form {
+		flex: 50%;
+		width: 100%;
+		height: 100%;
+		padding: 20px 15px;
+	}
+
+	.login-form form {
+		width: 100%;
+		padding: 20px 10px;
+	}
+
+	.login-form form h1 {
+		font-size: 18px;
+		margin: 0px 0px 15px 0px;
+	}
+
+	.login-txt {
+		height: 30px;
+		margin-bottom: 10px;
+		font-size: 12px;
+		padding: 0px 15px;
+	}
+
+	.login-labl {
+		margin: 10px 0 15px 0;
+		font-size: 11px;
+	}
+
+	.login-rmb {
+		margin-right: 5px;
+		width: 10px;
+	}
+
+	.login-btn {
+		height: 30px;
+		font-size: 14px;
+		font-weight: 600;
+	}
+
+	.login-succ {
+		border-radius: 15px;
+		padding: 20px 10px;
+	}
+
+	.login-succ i {
+		font-size: 28px;
+		padding: 15px;
+		margin-bottom: 15px;
+	}
+
+	.login-succ h1 {
+		font-size: 20px;
+	}
+
+	.login-succ p {
+		font-size: 16px;
+		margin: 20px 0px;
+	}
+
+	.login-succ a {
+		padding: 6px 26px;
+		font-size: 14px;
+	}
+
+	#sidebar.hide {
+		width: 50px;
+	}
+
+	#sidebar .brand img {
+		width: 30px;
+	}
+
+	#content main {
+		padding: 12px;
+	}
+
+	#sidebar.hide ~ #content {
+		width: calc(100% - 50px);
+		left: 50px;
+	}
+
+	.influ-btn input {
+		text-align: left;
+	}
+
+	.influ-btn input::placeholder {
+		font-size: 12px;
+	}
+
+	#sidebar {
+		width: 220px;
+	}
+
+	#content {
+		width: calc(100% - 60px);
+		left: 220px;
+	}
+
+	#sidebar .side-menu li {
+		height: 35px;
+		margin-left: 8px;
+		margin-bottom: 10px;
+	}
+
+	#sidebar .side-menu li a {
+		font-size: 12px;
+		padding-left: 16px;
+	}
+
+	#sidebar .side-menu li a i {
+		margin-right: 13px;
+		font-size: 15px;
+	}
+
+	.influ-btns form button i {
+		font-size: 14px;
+	}
+
+	.influ-table table tr td a {
+		display: inline-block;
+		margin: 5px 5px 5px 5px;
+	}
+
+	.influ-pagi ul li {
+		margin: 0 7px;
+	}
+
+	.influ-pagi ul li a {
+		font-size: 13px;
+	}
+
+	.influ-pagi ul li.active a {
+		font-size: 14px;
+		font-weight: 700;
+	}
+
+	#sidebar .brand {
+		font-size: 20px;
+		padding-left: 12px;
+	}
+
+	.influ-table table tr th {
+		font-size: 12px;
+		padding: 5px;
+	}
+
+	.influ-table table tr td {
+		font-size: 11px;
+		padding: 5px;
+	}
+
+	.modal-dialog-2 {
+		max-width: 280px;
+		margin: 7.75rem auto;
+	}
+
+	.edit-in_txt {
+		height: 30px;
+		margin-bottom: 8px;
+		font-size: 12px;
+	}
+
+	.edit-in_txtarea {
+		height: 80px;
+		margin-bottom: 8px;
+		font-size: 12px;
+	}
+
+}
+
+@media only screen and (min-width:320px) and (max-width:359px) {
+	#sidebar .side-menu li p {
+		left: 75px;
+	}
+	.influ-btn i {
+		margin-right: 5px;
+	}
+
+	.influ-table-btn {
+		padding: 4px 20px;
+		font-size: 12px;
+	}
+
+	.influ-strip-2 {
+		align-items: stretch;
+		margin-bottom: 20px;
+		flex-direction: column;
+	}
+
+	.influ-search {
+		margin-bottom: 15px;
+	}
+
+	.influ-btns form {
+		display: inherit;
+		text-align: center;
+	}
+
+	.influ-btn {
+		width: 100%;
+		font-size: 12px;
+		margin-left: 0px;
+		display: inline-flex;
+		flex-wrap: nowrap;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: center;
+		margin-bottom: 4px;
+	}
+
+	.menu-btn {
+		font-size: 25px;
+		margin: auto;
+	}
+
+	.sidebar-nav {
+		height: 100%;
+		width: 90%;
+	}
+
+	#wrapper.toggled {
+		padding-left: 0;
+	}
+
+	#wrapper {
+		padding-left: 320px;
+	}
+
+	#wrapper.toggled #sidebar-wrapper {
+		width: 320px;
+		transform: translateX(-320px);
+	}
+
+	#sidebar-wrapper {
+		width: 320px;
+		height: 100%;
+		position: fixed;
+		transform: translateX(0px);
+	}
+
+	.influ-table p {
+		font-size: 13px;
+		color: #B07D3C;
+		text-align: center;
+		margin: 10px 0px;
+	}
+
+	.influ-btns form input[type="date"] {
+		width: 100%;
+	}
+
+	.influ-btns form input[type="date"]::before {
+		top: 5px;
+		right: 25px;
+	}
+
+	.influ-btns form label {
+		width: 49%;
+		margin: 0px 0px 4px 0px;
+	}
+
+	.influ-btns form input[type="date"]::-webkit-calendar-picker-indicator {
+		width: 100px;
+		left: 0;
+	}
+
+	.modal-dialog {
+		width: 85% !important;
+		margin: 11.75rem auto;
+	}
+
+	.logout-in i {
+		font-size: 50px;
+	}
+
+	.logout-in p {
+		font-size: 14px;
+		margin: 22px 0;
+	}
+
+	.logout-in-btn {
+		padding: 5px 25px;
+		font-size: 13px;
+		margin: 0 5px;
+	}
+
+	#page-content-wrapper {
+		position: fixed;
+	}
+
+	.influ-btns form select {
+		width: 100%;
+		margin-left: 0px;
+		margin-bottom: 4px;
+		padding: 5px;
+	}
+
+	.login-in {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.login-logo {
+		flex: auto;
+		padding: 20px 0px;
+	}
+
+	.logo img {
+		width: 100px;
+		height: auto;
+		margin-bottom: 10px;
+	}
+
+	.logo h1 {
+		font-size: 25px;
+		margin: 0;
+		font-weight: 500;
+	}
+
+	.login-form {
+		flex: 50%;
+		width: 100%;
+		height: 100%;
+		padding: 10px;
+		border-radius: 0px 0px 15px 15px;
+	}
+
+	.login-form form {
+		width: 100%;
+		padding: 20px 10px;
+	}
+
+	.login-form form h1 {
+		font-size: 17px;
+		margin: 0px 0px 15px 0px;
+	}
+
+	.login-txt {
+		height: 30px;
+		margin-bottom: 10px;
+		font-size: 12px;
+		padding: 0px 15px;
+	}
+
+	.login-labl {
+		margin: 10px 0 15px 0;
+		font-size: 11px;
+	}
+
+	.login-rmb {
+		margin-right: 5px;
+		width: 10px;
+	}
+
+	.login-btn {
+		height: 30px;
+		font-size: 14px;
+		font-weight: 600;
+	}
+
+	.login-succ {
+		border-radius: 15px;
+		padding: 20px 10px;
+	}
+
+	.login-succ i {
+		font-size: 28px;
+		padding: 15px;
+		margin-bottom: 15px;
+	}
+
+	.login-succ h1 {
+		font-size: 20px;
+	}
+
+	.login-succ p {
+		font-size: 16px;
+		margin: 20px 0px;
+	}
+
+	.login-succ a {
+		padding: 6px 26px;
+		font-size: 14px;
+	}
+
+	#sidebar.hide {
+		width: 50px;
+	}
+
+	#sidebar .brand img {
+		width: 30px;
+	}
+
+	#content main {
+		padding: 12px;
+	}
+
+	#sidebar.hide ~ #content {
+		width: calc(100% - 50px);
+		left: 50px;
+	}
+
+	.influ-btn input {
+		text-align: left;
+	}
+
+	.influ-btn input::placeholder {
+		font-size: 12px;
+	}
+
+	#sidebar {
+		width: 220px;
+	}
+
+	#content {
+		width: calc(100% - 60px);
+		left: 220px;
+	}
+
+	#sidebar .side-menu li {
+		height: 35px;
+		margin-left: 8px;
+		margin-bottom: 10px;
+	}
+
+	#sidebar .side-menu li a {
+		font-size: 12px;
+		padding-left: 16px;
+	}
+
+	#sidebar .side-menu li a i {
+		margin-right: 13px;
+		font-size: 15px;
+	}
+
+	.influ-btns form button i {
+		font-size: 14px;
+	}
+
+	.influ-table table tr td a {
+		display: inline-block;
+		margin: 5px 5px 5px 5px;
+	}
+
+	.influ-pagi ul li {
+		margin: 0 7px;
+	}
+
+	.influ-pagi ul li a {
+		font-size: 13px;
+	}
+
+	.influ-pagi ul li.active a {
+		font-size: 14px;
+		font-weight: 700;
+	}
+
+	#sidebar .brand {
+		font-size: 20px;
+		padding-left: 12px;
+	}
+
+	.influ-table table tr th {
+		font-size: 12px;
+		padding: 5px;
+	}
+
+	.influ-table table tr td {
+		font-size: 11px;
+		padding: 5px;
+	}
+
+	.modal-dialog-2 {
+		max-width: 280px;
+		margin: 4.75rem auto;
+	}
+
+	.edit-in_txt {
+		height: 30px;
+		margin-bottom: 8px;
+		font-size: 12px;
+	}
+
+	.edit-in_txtarea {
+		height: 80px;
+		margin-bottom: 8px;
+		font-size: 12px;
+	}
+
+}
