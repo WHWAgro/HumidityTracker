@@ -50,9 +50,9 @@ Route::middleware('admin_auth')->group(function () {
     Route::post('delete_data',[App\Http\Controllers\DashboardController::class, 'delete_data']);
     Route::get('export-csv', [App\Http\Controllers\DashboardController::class, 'exportCSV']);
     Route::get('export-csv-forecast', [App\Http\Controllers\DashboardController::class, 'exportCSV_forecast']);
-    Route::get('export-csv-resume', [App\Http\Controllers\DashboardController::class, 'exportCSV_resume']);
     Route::post('graph_filter', [App\Http\Controllers\DashboardController::class, 'graph_filter']);
-    Route::post('resume', [App\Http\Controllers\DashboardController::class, 'resume']);
+    Route::get('export-csv-resume', [App\Http\Controllers\DashboardController::class, 'exportCSV_resume']);
+    Route::get('resume', [App\Http\Controllers\DashboardController::class, 'resume']);
 });
 
 
