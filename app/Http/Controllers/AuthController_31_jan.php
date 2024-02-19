@@ -18,7 +18,8 @@ class AuthController extends Controller
     }
 
     public function login(Request $request)
-    {
+    {   
+        print "hello!";
         $validate = Validator::make($request->all(),[
             'email' => 'required|email',
             'password' => 'required',

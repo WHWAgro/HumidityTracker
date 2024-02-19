@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Pin;
 use App\Models\Fields;
+use App\Models\ResumeForecast;
 use App\Models\PinHumidity;
 use Validator;
 use Carbon\Carbon;
@@ -195,6 +196,58 @@ class DashboardController extends Controller
         };
 
         return response()->stream($callback, 200, $headers);
+    }
+
+    public function exportCSV_resume(Request $request)
+    {
+        $fileName = 'Forecast'.date('y_m_d').'.csv';
+        $tasks =  Fields::join('past_forecasts','fields.id','past_forecasts.field_id')
+                        ->select('past_forecasts.*','fields.field_name','fields.field_code','fields.field_alias','fields.razon_social')
+                        ->get();
+
+        $headers = array(
+            "Content-type"        => "text/csv",
+            "Content-Disposition" => "attachment; filename=$fileName",
+            "Pragma"              => "no-cache",
+            "Cache-Control"       => "must-revalidate, post-check=0, pre-check=0",
+            "Expires"             => "0"
+        );
+
+        $columns = array('Date','Field Name', 'Code For Field', 'Alias2', 'Razon Social','Humidity', 'Is Forecast');
+
+        $callback = function() use($tasks, $columns) {
+            $file = fopen('php://output', 'w');
+            fputcsv($file, $columns);
+
+            foreach ($tasks as $task) {
+                $row['humidity_date']  = date("M d,Y",strtotime($task->humidity_date));
+                $row['field_name']    = $task->field_name;
+                $row['field_code']    = $task->field_code;
+                $row['field_alias']  = $task->field_alias;
+                $row['razon_social']  = $task->razon_social;
+                $row['humidity']  = $task->humidity;
+                $row['is_forecast']  = $task->is_forecast == 1 ? "Yes" : 'No' ;
+
+                fputcsv($file, array($row['humidity_date'], $row['field_name'], $row['field_code'], $row['field_alias'], $row['razon_social'],$row['humidity'],$row['is_forecast']));
+            }
+
+            fclose($file);
+        };
+
+        return response()->stream($callback, 200, $headers);
+    }
+    public function resume(Request $request)
+    {
+        
+        $field_data = Fields::join('resume_forecast','fields.id','resume_forecast.field_id');
+        
+
+
+        
+        $field['data'] = $field_data->get();
+        
+
+        echo json_encode($field);
     }
 
     public function graph_filter(Request $request)

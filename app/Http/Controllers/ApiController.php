@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Fields;
 use App\Models\Pin;
 use App\Models\PinHumidity;
+use App\Models\Resume;
 use Auth;
 use Mail;
 use App\Mail\VerificationMail;
@@ -54,7 +55,8 @@ class ApiController extends Controller
     }
 
     public function login(Request $request)
-    {
+    {   
+        
         $validator = Validator::make($request->all(), [
             'email' => 'required|email',
             'password' => 'required:min:8',
