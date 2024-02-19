@@ -1,16 +1,16 @@
-@extends('layouts.app')
-@section('title','Forecast Data')
+<?php $__env->startSection('title','Forecast Data'); ?>
 
-@section('content')
-    @include('layouts.sidebar')
+<?php $__env->startSection('content'); ?>
+    <?php echo $__env->make('layouts.sidebar', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <!-- CONTENT -->
     <section id="content">
         <!-- NAVBAR -->
         <nav>
             <i class='bx bx-menu'> <i class="far fa-bars"></i> </i>
             <div class="admin-icon">
-                <img src="{{ asset('images/admin.png') }}" alt="">
-                {{ auth()->user()->email }}
+                <img src="<?php echo e(asset('images/admin.png')); ?>" alt="">
+                <?php echo e(auth()->user()->email); ?>
+
             </div>
         </nav>
         <!-- NAVBAR -->
@@ -19,12 +19,12 @@
             <div class="page-wrap">
                 <div class="influ-strip">
                     <div class="influ-search">
-                        <form action="{{ url('forecast') }}" method="POST">
+                        <form action="<?php echo e(url('forecast')); ?>" method="POST">
                             <div id="search_field" class="field_section">
                                 <label>
                                     <input type="text" class="field_name" id="field_name" name="field_name"
                                            placeholder="Buscar Id de la Parcela" required>
-                                    <img src="{{ asset('images/search.png') }}" alt="">
+                                    <img src="<?php echo e(asset('images/search.png')); ?>" alt="">
                                 </label>
                                 <div class="field_name_section"></div>
                             </div>
@@ -48,13 +48,13 @@
                             <input type="button" id="get_forecast" onclick="graph_filters()" value="Enviar"
                                    class="influ-search-btn">
                             <div style="gap:12px" class="d-flex">
-								<span style="cursor:pointer;display:none;" data-href="{{ url('export-csv-forecast') }}" id="export_forecast"
+								<span style="cursor:pointer;display:none;" data-href="<?php echo e(url('export-csv-forecast')); ?>" id="export_forecast"
                                       class="influ-search-btn" onclick="exportTasks(event.target);"><img
-                                            src="{{ asset('images/export.png') }}" alt="">Exportar CSV</span>
+                                            src="<?php echo e(asset('images/export.png')); ?>" alt="">Exportar CSV</span>
 
-								<span style="cursor:pointer" data-href="{{ url('export-csv-resume') }}" id="export_resume"
+								<span style="cursor:pointer" data-href="<?php echo e(url('export-csv-resume')); ?>" id="export_resume"
 								  class="influ-search-btn" onclick="exportTasks(event.target);"><img
-										src="{{ asset('images/export.png') }}" alt="">Exportar CSV</span>
+										src="<?php echo e(asset('images/export.png')); ?>" alt="">Exportar CSV</span>
 
                                 <span style="cursor:pointer;" id="mode" class="influ-search-btn" onclick="toggleMode()">Modo Resumen</span>
                             </div>
@@ -92,8 +92,8 @@
         <!-- MAIN -->
     </section>
     <!-- CONTENT -->
-@endsection
-@section('script')
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('script'); ?>
     <script type="importmap">
         {
           "imports": {
@@ -254,7 +254,7 @@
 						url: url,
 						method: 'POST',
 						data: {
-							_token: "{{csrf_token()}}",
+							_token: "<?php echo e(csrf_token()); ?>",
 							filter_value: filter_value,
 							field_name: field_name,
 							from_date: from_date,
@@ -321,7 +321,7 @@
 			$(document).on('keyup', '.field_name', function () {
 				var search = $(this).val();
 				$.ajax({
-					url: "{{ url('field_names') }}",
+					url: "<?php echo e(url('field_names')); ?>",
 					data: {search: search},
 					success: function (response) {
 						$('.field_name_section').html('');
@@ -339,4 +339,6 @@
 				$('.field_name_section').html('');
 			});
     </script>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Users/cristobal/Repos/WHW/HumidityTracker/resources/views/forecast-data.blade.php ENDPATH**/ ?>
