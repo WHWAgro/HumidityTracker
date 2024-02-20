@@ -27,6 +27,7 @@ class DashboardController extends Controller
             return view('forecast-data');
     }
 
+    
     public function forecast_data(Request $request)
     {
         $field_data = [];
@@ -34,12 +35,14 @@ class DashboardController extends Controller
         $requested_field_name = '';
         $default_map = '';
         
+        
         if($request->all())
         {
             $validate = Validator::make($request->all(),[
                 'date' => 'required',
                 'field_name' => 'required'
             ])->validate();
+            
             // $requested_date = $request->date;
             // $requested_field_name = $request->field_name;
             $date = $request->date;
@@ -54,14 +57,17 @@ class DashboardController extends Controller
                                 ->get();
 
                                 // dd($date,$field_name);
+                                                 
             if(count($field_data) == 0)
             {
+                
                 $default_map = Fields::select('map_file')
                                         ->where('fields.field_code',$field_name)
                                         ->orWhere('fields.field_name',$field_name)
                                         ->first();
             }
         }
+        
         return view('check-data',compact('field_data','requested_date','requested_field_name','default_map'));
     }
 
@@ -201,9 +207,10 @@ class DashboardController extends Controller
     public function exportCSV_resume(Request $request)
     {
         $fileName = 'Forecast'.date('y_m_d').'.csv';
-        $tasks =  Fields::join('past_forecasts','fields.id','past_forecasts.field_id')
-                        ->select('past_forecasts.*','fields.field_name','fields.field_code','fields.field_alias','fields.razon_social')
-                        ->get();
+        $tasks = Fields::select('field_name', 'field_code', 'field_alias', 'razon_social', 'comuna', 'crm_hembra','target_humidity')
+        ->whereNotNull('target_humidity')
+        ->distinct()
+        ->get();
 
         $headers = array(
             "Content-type"        => "text/csv",
@@ -213,22 +220,24 @@ class DashboardController extends Controller
             "Expires"             => "0"
         );
 
-        $columns = array('Date','Field Name', 'Code For Field', 'Alias2', 'Razon Social','Humidity', 'Is Forecast');
+        $columns = array('Razon social','Field Code', 'Field Name', 'Field Alias', 'Comuna','CRM Hembra','Última Medición',"20-02-2023", "21-02-2024", "22-02-2024", "23-02-2024", "24-02-2024", "25-02-2024", "26-02-2024", "27-02-2024", "28-02-2024", "29-02-2024", "01-03-2024", "02-03-2024", "03-03-2024", "04-03-2024");
 
         $callback = function() use($tasks, $columns) {
             $file = fopen('php://output', 'w');
             fputcsv($file, $columns);
 
             foreach ($tasks as $task) {
-                $row['humidity_date']  = date("M d,Y",strtotime($task->humidity_date));
-                $row['field_name']    = $task->field_name;
-                $row['field_code']    = $task->field_code;
-                $row['field_alias']  = $task->field_alias;
                 $row['razon_social']  = $task->razon_social;
-                $row['humidity']  = $task->humidity;
-                $row['is_forecast']  = $task->is_forecast == 1 ? "Yes" : 'No' ;
+                $row['field_code']    = $task->field_code;
+                $row['field_name']    = $task->field_name;
+                $row['field_alias']  = $task->field_alias;
+                $row['comuna']  = $task->comuna;
+                $row['crm_hembra']  = $task->crm_hembra;
+               
+                
+                
 
-                fputcsv($file, array($row['humidity_date'], $row['field_name'], $row['field_code'], $row['field_alias'], $row['razon_social'],$row['humidity'],$row['is_forecast']));
+                fputcsv($file, array( $row['razon_social'], $row['field_code'], $row['field_name'], $row['field_alias'],$row['comuna'],$row['crm_hembra']));
             }
 
             fclose($file);

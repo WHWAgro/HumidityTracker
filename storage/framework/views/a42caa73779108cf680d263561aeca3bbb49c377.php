@@ -342,11 +342,22 @@
 		// 			];
 		var locations = <?php echo $encoded; ?>;
 		// var src = "https://whw.yesitlabs.xyz/map_files/"+locations[0][4];
-		var src = "https://www.whwdata.cl/map_files/"+locations[0][4];
+		//var src = "https://www.whwdata.cl/map_files/"+locations[0][4];
+		var src = "/map_files/"+locations[0][4];
+		console.log(src)
+		var fileUrl = src;
+		var xhr = new XMLHttpRequest();
+		xhr.open('HEAD', fileUrl, false); // false makes the request synchronous
+		xhr.send();
+		if (xhr.status === 200) {
+			console.log('File exists.');
+		} else {
+			console.log('File does not exist.');
+		}
 
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-          center: new google.maps.LatLng(-19.257753, 146.823688),
+          center: new google.maps.LatLng(-34.75345737899994,-71.03558142499998),
           zoom: 12,
           mapTypeId: 'satellite'
         });

@@ -210,11 +210,17 @@
 						humidity15DaysCell.textContent = item.humidity_15_days ?? 'N/A';
 
 						const humidityDateCell = document.createElement('td');
-						const date = new Date(item.date_target_humidity) ?? "N/A";
-						const year = date.getFullYear();
-						const month = (date.getMonth() + 1).toString().padStart(2, '0');
-						const day = date.getDate().toString().padStart(2, '0');
-						humidityDateCell.textContent = `${year}-${month}-${day}`;
+						
+						let date = "N/A";
+						if (item.date_target_humidity !== null) {
+							const parsedDate = new Date(item.date_target_humidity);
+							const year = parsedDate.getFullYear();
+							const month = (parsedDate.getMonth() + 1).toString().padStart(2, '0');
+							const day = parsedDate.getDate().toString().padStart(2, '0');
+							date = `${day}-${month}-${year}`;
+						}
+
+humidityDateCell.textContent = date;
 
 						row.appendChild(fieldNameCell);
 						row.appendChild(fieldCodeCell);

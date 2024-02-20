@@ -342,10 +342,12 @@
 		var locations = <?php echo $encoded; ?>;
 		// var src = "https://whw.yesitlabs.xyz/map_files/"+locations[0][4];
 		var src = "https://www.whwdata.cl/map_files/"+locations[0][4];
+		
+		
 
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
-          center: new google.maps.LatLng(-19.257753, 146.823688),
+          center: new google.maps.LatLng(-34.75345737899994,-71.03558142499998),
           zoom: 12,
           mapTypeId: 'satellite'
         });
