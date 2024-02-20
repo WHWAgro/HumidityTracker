@@ -197,7 +197,7 @@
 						fieldNameCell.textContent = item.field_name ?? "N/A";
 
 						const fieldCodeCell = document.createElement('td');
-						fieldCodeCell.textContent = item.field_codei ?? "N/A";
+						fieldCodeCell.textContent = item.field_code ?? "N/A";
 
 						const comunaCell = document.createElement('td');
 						comunaCell.textContent = item.comuna ?? "N/A"
