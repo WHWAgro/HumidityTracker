@@ -204,7 +204,7 @@
 
 
 						const humidityObjectiveCell = document.createElement('td');
-						humidityObjectiveCell.textContent = item.target_humidity ?? "N/A";
+						humidityObjectiveCell.textContent = item.target_humidity + " %" ?? "N/A";
 
 						const humidity15DaysCell = document.createElement('td');
 						humidity15DaysCell.textContent = item.humidity_15_days ?? 'N/A';

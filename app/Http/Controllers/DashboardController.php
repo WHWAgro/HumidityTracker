@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Pin;
 use App\Models\Fields;
@@ -204,47 +204,7 @@ class DashboardController extends Controller
         return response()->stream($callback, 200, $headers);
     }
 
-    public function exportCSV_resume(Request $request)
-    {
-        $fileName = 'Forecast'.date('y_m_d').'.csv';
-        $tasks = Fields::select('field_name', 'field_code', 'field_alias', 'razon_social', 'comuna', 'crm_hembra','target_humidity')
-        ->whereNotNull('target_humidity')
-        ->distinct()
-        ->get();
-
-        $headers = array(
-            "Content-type"        => "text/csv",
-            "Content-Disposition" => "attachment; filename=$fileName",
-            "Pragma"              => "no-cache",
-            "Cache-Control"       => "must-revalidate, post-check=0, pre-check=0",
-            "Expires"             => "0"
-        );
-
-        $columns = array('Razon social','Field Code', 'Field Name', 'Field Alias', 'Comuna','CRM Hembra','Última Medición',"20-02-2023", "21-02-2024", "22-02-2024", "23-02-2024", "24-02-2024", "25-02-2024", "26-02-2024", "27-02-2024", "28-02-2024", "29-02-2024", "01-03-2024", "02-03-2024", "03-03-2024", "04-03-2024");
-
-        $callback = function() use($tasks, $columns) {
-            $file = fopen('php://output', 'w');
-            fputcsv($file, $columns);
-
-            foreach ($tasks as $task) {
-                $row['razon_social']  = $task->razon_social;
-                $row['field_code']    = $task->field_code;
-                $row['field_name']    = $task->field_name;
-                $row['field_alias']  = $task->field_alias;
-                $row['comuna']  = $task->comuna;
-                $row['crm_hembra']  = $task->crm_hembra;
-               
-                
-                
-
-                fputcsv($file, array( $row['razon_social'], $row['field_code'], $row['field_name'], $row['field_alias'],$row['comuna'],$row['crm_hembra']));
-            }
-
-            fclose($file);
-        };
-
-        return response()->stream($callback, 200, $headers);
-    }
+    
     public function resume(Request $request)
     {
         
@@ -676,4 +636,196 @@ class DashboardController extends Controller
 
         echo json_encode($field);
     }
+
+
+    public function exportCSV_resume(Request $request)
+    {
+        $fileName = 'Forecast'.date('y_m_d').'.csv';
+         // Query to fetch the required information for each field
+        $fields_info = DB::table('fields')
+        ->select('id','field_name', 'field_code', 'field_alias', 'razon_social', 'comuna', 'crm_hembra', 'target_humidity')
+        ->whereNotNull('target_humidity')
+        ->distinct()
+        ->get();
+
+        $headers = array(
+            "Content-type"        => "text/csv",
+            "Content-Disposition" => "attachment; filename=$fileName",
+            "Pragma"              => "no-cache",
+            "Cache-Control"       => "must-revalidate, post-check=0, pre-check=0",
+            "Expires"             => "0"
+        );
+
+        $columns = array('Razon social','Field Code', 'Field Name', 'Field Alias', 'Comuna','CRM Hembra','Humedad objetivo','Última Medición');
+        error_log(json_encode($columns));
+        $dates_full = $this->getForecastDates();
+        $dates=$dates_full['ymd'];
+        $dates_dmy=$dates_full['dmy'];
+        // Add the dynamic dates as columns
+        $columns = array_merge($columns, $dates_dmy);
+        error_log(json_encode($columns));
+        
+        $callback = function() use($fields_info, $columns,$dates) {
+            $file = fopen('php://output', 'w');
+            fputcsv($file, $columns);
+
+            foreach ($fields_info as $field) {
+                
+                $last_humidity_date = $this->getLastHumidityDate($field->id);
+                
+                // Only add the field to the rows if last humidity date is available
+                if ($last_humidity_date !== null) {
+                    
+                    $rows = array(
+                        $field->razon_social,
+                        $field->field_code,
+                        $field->field_name,
+                        $field->field_alias,
+                        $field->comuna,
+                        $field->crm_hembra,
+                        $field->target_humidity,
+                        $last_humidity_date
+                    );
+
+                    foreach ($dates as $date) {
+                        error_log(json_encode("-------"));
+                        error_log(json_encode($field->id));
+                        
+                        $forecast = $this->getPastForecast($field->id, $date);
+                       
+                        $rows[] = $forecast;
+                    }
+                    
+                    
+                    fputcsv($file, $rows);
+                
+                }
+            }
+
+
+            fclose($file);
+        };
+
+        return response()->stream($callback, 200, $headers);
+    }
+    function getForecastDates()
+        {
+            $min_date = DB::table('past_forecasts')
+                ->where('is_forecast', 1)
+                ->min('humidity_date');
+
+            $max_date = DB::table('past_forecasts')
+                ->where('is_forecast', 1)
+                ->max('humidity_date');
+
+            // Generate an array of dates within the range
+            $dates_ymd = [];
+            $dates_dmy = [];
+          
+            $current_date = strtotime($min_date);
+            $max_date = strtotime($max_date);
+            
+            while ($current_date <= $max_date) {
+                
+                $dates_ymd[] = date('Y-m-d',$current_date);
+                $dates_dmy[] = date('d-m-Y',$current_date);
+                $current_date= strtotime( date('Y-m-d',$current_date)." +1 day");
+                
+                
+            }
+
+            return ['ymd' => $dates_ymd, 'dmy' => $dates_dmy];
+        }
+
+    function getPastForecast($field_code, $date)
+        {   
+            error_log(json_encode($date));
+            $past_forecast= DB::table('past_forecasts')
+                ->where('is_forecast', 1)
+                ->whereExists(function ($query) use ($field_code) {
+                    $query->select(DB::raw(1))
+                        ->from('fields')
+                        ->whereColumn('fields.id', 'past_forecasts.field_id')
+                        ->where('fields.id', $field_code);
+                })
+                ->whereDate('humidity_date', $date)
+                ->value('humidity');
+                error_log(json_encode($past_forecast));
+            return $past_forecast;
+        }
+
+
+    public function exportCSV_resume2(Request $request)
+    {
+        $fileName = 'Forecast'.date('y_m_d').'.csv';
+        $tasks = Fields::select('field_name', 'field_code', 'field_alias', 'razon_social', 'comuna', 'crm_hembra','target_humidity')
+        ->whereNotNull('target_humidity')
+        ->distinct()
+        ->get();
+
+        $headers = array(
+            "Content-type"        => "text/csv",
+            "Content-Disposition" => "attachment; filename=$fileName",
+            "Pragma"              => "no-cache",
+            "Cache-Control"       => "must-revalidate, post-check=0, pre-check=0",
+            "Expires"             => "0"
+        );
+
+        $columns = array('Razon social','Field Code', 'Field Name', 'Field Alias', 'Comuna','CRM Hembra','Última Medición',"20-02-2023", "21-02-2024", "22-02-2024", "23-02-2024", "24-02-2024", "25-02-2024", "26-02-2024", "27-02-2024", "28-02-2024", "29-02-2024", "01-03-2024", "02-03-2024", "03-03-2024", "04-03-2024");
+
+        $callback = function() use($tasks, $columns) {
+            $file = fopen('php://output', 'w');
+            fputcsv($file, $columns);
+
+            foreach ($tasks as $task) {
+                $row['razon_social']  = $task->razon_social;
+                $row['field_code']    = $task->field_code;
+                $row['field_name']    = $task->field_name;
+                $row['field_alias']  = $task->field_alias;
+                $row['comuna']  = $task->comuna;
+                $row['crm_hembra']  = $task->crm_hembra;
+               
+                
+                
+
+                fputcsv($file, array( $row['razon_social'], $row['field_code'], $row['field_name'], $row['field_alias'],$row['comuna'],$row['crm_hembra']));
+            }
+
+            fclose($file);
+        };
+
+        return response()->stream($callback, 200, $headers);
+    }
+
+    function getLastHumidityDate($field_code) {
+        // Query to fetch the last humidity date for the given field code
+
+        
+       
+        
+        
+        $last_humidity_date = DB::table('past_forecasts')
+            ->select(DB::raw('MAX(humidity_date) as last_humidity_date'))
+            ->where('is_forecast', 0)
+            ->whereExists(function ($query) use ($field_code) {
+                $query->select(DB::raw(1))
+                      ->from('fields')
+                      ->whereColumn('fields.id', 'past_forecasts.field_id')
+                      ->where('fields.id', $field_code);
+            })->value('last_humidity_date');
+            
+            
+
+            
+        if ($last_humidity_date !== null){
+            $last_humidity_date=date('d-m-Y',strtotime($last_humidity_date));
+        }
+        
+        
+        return $last_humidity_date;
+    }
+
+
+
+
 }
