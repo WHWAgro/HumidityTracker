@@ -48,13 +48,13 @@
                             <input type="button" id="get_forecast" onclick="graph_filters()" value="Enviar"
                                    class="influ-search-btn">
                             <div style="gap:12px" class="d-flex">
-								<span style="cursor:pointer;display:none;" data-href="<?php echo e(url('export-csv-forecast')); ?>" id="export_forecast"
+								<span style="cursor:pointer" data-href="<?php echo e(url('export-csv-forecast')); ?>" id="export_forecast"
                                       class="influ-search-btn" onclick="exportTasks(event.target);"><img
-                                            src="<?php echo e(asset('images/export.png')); ?>" alt="">Exportar CSV</span>
+                                            src="<?php echo e(asset('images/export.png')); ?>" alt="">Exportar CSV 1</span>
 
-								<span style="cursor:pointer" data-href="<?php echo e(url('export-csv-resume')); ?>" id="export_resume"
+								<span style="cursor:pointer;display:none;" data-href="<?php echo e(url('export-csv-resume')); ?>" id="export_resume"
 								  class="influ-search-btn" onclick="exportTasks(event.target);"><img
-										src="<?php echo e(asset('images/export.png')); ?>" alt="">Exportar CSV</span>
+										src="<?php echo e(asset('images/export.png')); ?>" alt="">Exportar CSV 2</span>
 
                                 <span style="cursor:pointer;" id="mode" class="influ-search-btn" onclick="toggleMode()">Modo Resumen</span>
                             </div>
